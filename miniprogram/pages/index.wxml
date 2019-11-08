@@ -1,2 +1,9 @@
 <!--miniprogram/pages/index.wxml-->
-<text>miniprogram/pages/index.wxml</text>
+<view class="full-width page">
+  <view class="content">
+    <view class="item" bindtap="scanQrcode">
+      <image class="full-width" mode="widthFix" src="../images/scan-qrcode.jpg" />
+      <view class="title">扫一扫</view>
+    </view>
+  </view>
+</view>

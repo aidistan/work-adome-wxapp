@@ -1,1 +1,14 @@
 /* miniprogram/app.wxss */
+@import './miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -1,1 +1,20 @@
 /* miniprogram/pages/index.wxss */
+
+.content {
+  width: 90%;
+}
+
+.content .item {
+  position: relative;
+  margin: 0.5em 0;
+}
+
+.content .title {
+  position: absolute;
+  bottom: 0.3em;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.4));
+}
