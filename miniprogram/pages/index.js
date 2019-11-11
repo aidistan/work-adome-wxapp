@@ -1,13 +1,11 @@
 // miniprogram/pages/index.js
-const app = getApp()
+import { app, wxp } from '../utils/index'
 
 Page({
   scanQrcode () {
-    wx.showActionSheet({
-      itemList: ['文本识别', '发票识别', '光码传输'],
-      success (res) {
-        console.log(res.tapIndex)
-      }
+    wxp.showActionSheet({
+      itemList: ['文本识别', '发票识别', '光码传输']
     })
+    .then((res) => console.log(res.tapIndex))
   }
 })

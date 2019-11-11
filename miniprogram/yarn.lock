@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+miniprogram-api-promise@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-promise/-/miniprogram-api-promise-1.0.4.tgz#fefe9b72923fd31f88b12463b502cb457c892b4c"
+  integrity sha512-lS2ukj03Ugy8IJUDmdssklLT4kjzyRtVYwErhyDZkzxtqcxaed2xldRgNrsikigeMUBR9gAs7wgnjSKPlyKIYg==
+
 weui-miniprogram@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/weui-miniprogram/-/weui-miniprogram-0.2.0.tgz#0eb6d234d74334ff27fa27263380ee2ed5548aad"
