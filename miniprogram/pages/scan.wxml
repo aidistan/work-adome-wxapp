@@ -1,0 +1,4 @@
+<!--miniprogram/pages/scan.wxml-->
+<view class="full-width page">
+  <text class="full-width content" selectable space="nbsp">{{ text }}</text>
+</view>

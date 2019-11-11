@@ -1,0 +1,9 @@
+/* miniprogram/pages/scan.wxss */
+
+.content {
+  box-sizing: border-box;
+  padding: 1em;
+
+  font-size: 40rpx;
+  word-wrap: break-word;
+}
