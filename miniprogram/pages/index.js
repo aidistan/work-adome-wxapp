@@ -3,10 +3,7 @@ import { app, wxp } from '../utils/index'
 
 Page({
   scan () {
-    wxp.showActionSheet({ itemList: ['纯文本识别', '光码传文件'] })
-    .then((res) => {
-      const mode = ['text', 'file'][res.tapIndex]
-      wxp.navigateTo({ url: `scan?mode=${mode}` })
-    })
+    wxp.showActionSheet({ itemList: ['手动连续扫码', '自动连续扫码'] })
+    .then((res) => wxp.navigateTo({ url: `scan?auto=${res.tapIndex}` }))
   }
 })

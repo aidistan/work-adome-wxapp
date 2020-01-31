@@ -2,8 +2,8 @@
 <view class="full-width page">
   <view class="content">
     <view class="item" bindtap="scan">
-      <image class="full-width" mode="widthFix" src="../images/scan.jpg" />
-      <view class="title">扫一扫</view>
+      <image class="full-width" mode="widthFix" src="../assets/scan.jpg" />
+      <view class="title">码传 ZIP</view>
     </view>
   </view>
 </view>
