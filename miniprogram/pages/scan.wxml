@@ -1,23 +1,33 @@
 <!--miniprogram/pages/scan.wxml-->
 <view class="full-width page">
-  <view class="weui-form">
+  <view class="full-width weui-form">
     <view class="weui-form__text-area">
-      <view class="weui-form__title">
-        {{ auto ? "自动连续扫码中" : "请手动连续扫码" }}
-      </view>
-      <view class="weui-form__desc">
-        {{ "已扫描 " + chunks.length + " 个码块" }}
-      </view>
+      <h2 class="weui-form__title">光码传输</h2>
+      <view class="weui-form__desc">{{ auto ? '自动连续扫码中' : '请继续手动扫码' }}</view>
     </view>
+
     <view class="weui-form__control-area">
+      <view wx:if="{{chunks.length > 0}}" class="weui-cells__title">
+        {{ '已扫描 ' + chunks.length + ' 个码块' }}
+      </view>
+      <view class="weui-cells">
+        <view wx:for="{{chunks}}" wx:key="*this" class="weui-cell"
+          bindtap="removeChunk" data-index="{{index}}">
+          <view class="weui-cell__bd">{{item}}</view>
+          <view class="weui-cell__ft">{{index + 1}}</view>
+        </view>
+      </view>
     </view>
+
     <view class="weui-form__tips-area">
-      <view class="weui-form__tips">通过连续扫码获得码块，拼接后得到原 ZIP 文件</view>
+      <view class="weui-form__tips">通过扫码获得码块，拼接后得到原文/原文件</view>
       <view class="weui-form__tips">（文件大小限 10MB 以内）</view>
     </view>
+
     <view class="weui-form__opr-area">
-      <button class="weui-btn" type="primary" bindtap="scanCode">继续扫描</button>
-      <button class="weui-btn" type="default" bindtap="makeFile">开始拼接</button>
+      <button class="weui-btn weui-btn_primary" size="mini" bindtap="scanCode">继续扫描</button>
+      <button class="weui-btn weui-btn_default" size="mini" bindtap="scanCode" data-auto>连续扫描</button>
+      <button class="weui-btn weui-btn_warn" size="mini" bindtap="makeFile">开始拼接</button>
     </view>
   </view>
 </view>

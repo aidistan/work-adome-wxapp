@@ -1,5 +1,9 @@
 /* miniprogram/pages/scan.wxss */
 
-.weui-form {
-  background-color: transparent;
+.weui-form__opr-area {
+  text-align: center;
+}
+
+.weui-form__opr-area .weui-btn {
+  margin: 0 8rpx;
 }

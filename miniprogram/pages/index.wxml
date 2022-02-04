@@ -3,7 +3,7 @@
   <view class="content">
     <view class="item" bindtap="scan">
       <image class="full-width" mode="widthFix" src="../assets/scan.jpg" />
-      <view class="title">码传 ZIP</view>
+      <view class="title">光码传输</view>
     </view>
   </view>
 </view>
