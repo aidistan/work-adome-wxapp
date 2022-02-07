@@ -2,26 +2,26 @@
 <view class="full-width page">
   <view class="full-width weui-form">
     <view class="weui-form__text-area">
-      <h2 class="weui-form__title">光码传输</h2>
-      <view class="weui-form__desc">{{ auto ? '自动连续扫码中' : '请继续手动扫码' }}</view>
+      <h2 class="weui-form__title">{{ auto ? '自动连续扫码中' : '请继续手动扫码' }}</h2>
+      <view class="weui-form__desc">{{ '已扫描 ' + chunks.length + ' 个码块' }}</view>
     </view>
 
     <view class="weui-form__control-area">
-      <view wx:if="{{chunks.length > 0}}" class="weui-cells__title">
-        {{ '已扫描 ' + chunks.length + ' 个码块' }}
+      <view wx:if="{{recentChunks.length > 0}}" class="weui-cells__title">
+        {{ '最近扫描的 ' + recentChunks.length + ' 个码块' }}
       </view>
       <view class="weui-cells">
-        <view wx:for="{{chunks}}" wx:key="*this" class="weui-cell"
-          bindtap="removeChunk" data-index="{{index}}">
-          <view class="weui-cell__bd">{{item}}</view>
-          <view class="weui-cell__ft">{{index + 1}}</view>
+        <view wx:for="{{recentChunks}}" wx:key="*this" class="weui-cell"
+          bindtap="removeChunk" data-index="{{item.index}}">
+          <view class="weui-cell__bd">码块 #{{item.index + 1}}</view>
+          <view class="weui-cell__ft">{{item.head}}</view>
         </view>
       </view>
     </view>
 
     <view class="weui-form__tips-area">
-      <view class="weui-form__tips">通过扫码获得码块，拼接后得到原文/原文件</view>
-      <view class="weui-form__tips">（文件大小限 10MB 以内）</view>
+      <view class="weui-form__tips">通过扫码获得码块，拼接后得到原 ZIP 文件</view>
+      <view class="weui-form__tips">（文件建议不超过 100kb 大小）</view>
     </view>
 
     <view class="weui-form__opr-area">

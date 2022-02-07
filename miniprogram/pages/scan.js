@@ -3,7 +3,17 @@ const app = getApp()
 
 Page({
   data: {
-    chunks: []
+    chunks: [],
+    recentChunks: []
+  },
+
+  computeRecentChunks () {
+    this.setData({
+      recentChunks: this.data.chunks
+        .map((val, index) => ({ head: val.slice(0 ,10), index }))
+        .slice(-5)
+        .reverse()
+    })
   },
 
   scanCode ({ currentTarget: { dataset: { auto }}}) {
@@ -13,6 +23,7 @@ Page({
         const data = {}
         data[`chunks[${this.data.chunks.length}]`] = res.rawData
         this.setData(data)
+        this.computeRecentChunks()
       })
       .then(() => auto && scan())
 
@@ -34,12 +45,13 @@ Page({
     const index = e.currentTarget.dataset.index
 
     return wx.showModal({
-      title: `移除第 ${index + 1} 个码块`
+      title: `移除码块# ${index + 1}`
     })
     .then(() => {
       const chunks = this.data.chunks
       chunks.splice(index, 1)
       this.setData({ chunks })
+      this.computeRecentChunks()
     })
   },
 
